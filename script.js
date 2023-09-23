@@ -1,4 +1,3 @@
-require('dotenv').config()
 async function onsubmitclick(str) {
     var bodyy = {
         "title": str,
@@ -6,7 +5,7 @@ async function onsubmitclick(str) {
         "numbermiddle": document.getElementById(`${str}middle`).value,
         "numberbottom": document.getElementById(`${str}bottom`).value
     }
-    await fetch(`${process.env.URI}/upload`, {
+    await fetch(`${import.meta.env.URI}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
