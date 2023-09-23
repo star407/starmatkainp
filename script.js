@@ -1,5 +1,3 @@
-import { uri } from "./index";
-
 async function onsubmitclick(str) {
     var bodyy = {
         "title": str,
@@ -7,7 +5,7 @@ async function onsubmitclick(str) {
         "numbermiddle": document.getElementById(`${str}middle`).value,
         "numberbottom": document.getElementById(`${str}bottom`).value
     }
-    await fetch(`${uri}/upload`, {
+    await fetch(`https://starmatkaagain.onrender.com/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
