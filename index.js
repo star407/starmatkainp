@@ -4,7 +4,7 @@ const path = require("path");
 
 const cors = require('cors')
 const app = express()
-
+require('dotenv').config()
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
 
@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname,'.')))
 app.use(cors())
 
 // initializing port
+let uri = process.env.URI
 let port = 3001
 
 // setting headers
@@ -64,5 +65,5 @@ const initServer =
 initServer()
 
 module.exports = {
-    app
+    app, uri
 };

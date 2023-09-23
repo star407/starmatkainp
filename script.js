@@ -1,3 +1,5 @@
+const { uri } = require(".");
+
 async function onsubmitclick(str) {
     var bodyy = {
         "title": str,
@@ -5,7 +7,7 @@ async function onsubmitclick(str) {
         "numbermiddle": document.getElementById(`${str}middle`).value,
         "numberbottom": document.getElementById(`${str}bottom`).value
     }
-    await fetch(`${import.meta.env.URI}/upload`, {
+    await fetch(`${uri}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
