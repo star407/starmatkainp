@@ -1,4 +1,4 @@
-const { uri } = require(".");
+import { uri } from "./index";
 
 async function onsubmitclick(str) {
     var bodyy = {
