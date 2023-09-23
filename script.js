@@ -5,6 +5,9 @@ async function onsubmitclick(str) {
         "numbermiddle": document.getElementById(`${str}middle`).value,
         "numberbottom": document.getElementById(`${str}bottom`).value
     }
+    document.getElementById(`${str}top`).value = ""
+    document.getElementById(`${str}middle`).value = ""
+    document.getElementById(`${str}bottom`).value = ""
     await fetch(`https://starmatkaagain.onrender.com/upload`, {
         method: 'POST',
         headers: {
