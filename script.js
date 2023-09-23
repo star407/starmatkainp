@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 async function onsubmitclick(str) {
     var bodyy = {
         "title": str,
@@ -6,7 +6,7 @@ async function onsubmitclick(str) {
         "numbermiddle": document.getElementById(`${str}middle`).value,
         "numberbottom": document.getElementById(`${str}bottom`).value
     }
-    await fetch('http://localhost:8080/upload', {
+    await fetch(`${process.env.URI}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,3 @@ async function onsubmitclick(str) {
             console.error('fetch error:', error);
           });
 }
-
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-  }
