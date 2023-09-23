@@ -1,9 +1,15 @@
 async function onsubmitclick(str) {
     var bodyy = {
         "title": str,
-        "numbertop": document.getElementById(`${str}top`).value,
-        "numbermiddle": document.getElementById(`${str}middle`).value,
-        "numberbottom": document.getElementById(`${str}bottom`).value
+    }
+    if(document.getElementById(`${str}top`).value != ""){
+      bodyy.numbertop = document.getElementById(`${str}top`).value
+    }
+    if(document.getElementById(`${str}middle`).value != ""){
+      bodyy.numbermiddle = document.getElementById(`${str}middle`).value
+    }
+    if(document.getElementById(`${str}bottom`).value != ""){
+      bodyy.numberbottom = document.getElementById(`${str}bottom`).value
     }
     document.getElementById(`${str}top`).value = ""
     document.getElementById(`${str}middle`).value = ""
