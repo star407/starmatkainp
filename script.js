@@ -112,7 +112,7 @@ async function onsubmitclickln(str) {
      arr.push(...[parseInt(num%10)])
      num = parseInt(num/10)
     }
-    bodyy.ln = arr.reverse()
+    bodyy.ln = arr
    } else{
      //do nothing
      flag = false
