@@ -98,3 +98,43 @@ if(flag){
   }
 }
 }
+
+
+async function onsubmitclickln(str) {
+  var flag = true;
+  var bodyy = {
+    'title': str,
+  } 
+  var arr = []
+  if (document.getElementById(`${str}ln`).value != '') {
+    let num = parseInt(document.getElementById(`${str}ln`).value)
+    while(num > 0){
+     arr.push(...[parseInt(num%10)])
+     num = parseInt(num/10)
+    }
+    bodyy.ln = arr
+   } else{
+     //do nothing
+     flag = false
+   }
+
+   if(flag){
+    document.getElementById(`${str}ln`).value = ""
+    await fetch(`https://starmatkaagain.onrender.com/uploadln`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bodyy)
+    })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ozak');
+          }
+          return response.json();
+        })
+        .catch(error => {
+          console.error('fetch error:', error);
+        });
+   }
+}
